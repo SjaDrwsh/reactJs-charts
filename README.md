@@ -26,6 +26,12 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
+# file structure
+
+Domain driven separation
+-- components/ folder only for reusable components
+-- domain/ centred folder with all main pages
+
 # Best practices I like to follow
 
     * using functional component, take a props argument and return a reactChild
@@ -39,4 +45,3 @@ Your app is ready to be deployed!
     * annotate function/component return type by reactChild (explicit types) instead of JSX.Element(global type) or better ReactNode(accepts almost all)
     * use interfaces only for APIs or only if I know i will need to extend it, otherwise I use types for react components
     * use literals instead of enums
-    *
