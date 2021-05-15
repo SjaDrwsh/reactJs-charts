@@ -30,7 +30,7 @@ Your app is ready to be deployed!
 
 Domain driven separation \
 -- components/ folder only for reusable components \
--- domain/ centred folder with all main pages \
+-- pages/ centred folder with all main pages
 
 # Best practices I like to follow
 
