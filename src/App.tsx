@@ -1,4 +1,4 @@
-import 'semantic-ui-css/semantic.min.css';
+import 'semantic-ui-less/semantic.less';
 import OverviewPage from './pages/overviewPage/overviewPage';
 
 const App = () => {

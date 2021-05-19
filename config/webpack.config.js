@@ -4,14 +4,17 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const babelConfig = require('../babel.config.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const pathToRoot = path.resolve(__dirname, '..');
 const pathToSrc = path.resolve(pathToRoot, './src');
 const pathToBuild = path.resolve(pathToRoot, './build');
 const pathToPublic = path.resolve(pathToRoot, './public');
 const pathToPolyfills = path.resolve(pathToRoot, './config/polyfills.js');
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
+  mode: process.env.NODE_ENV,
   entry: {
     index: [pathToPolyfills, path.resolve(pathToSrc, 'index.tsx')],
   },
@@ -22,12 +25,10 @@ module.exports = {
   },
   resolve: {
     // resolve imports with file extension name
-    extensions: ['.mjs', '.ts', '.tsx', '.js', '.json'],
+    extensions: ['.mjs', '.ts', '.tsx', '.js', '.json', '.scss'],
     alias: {
-      // Tell semantic-ui-less where our theme.config is located.
-      // @see https://medium.com/webmonkeys/webpack-2-semantic-ui-theming-a216ddf60daf
-      // The alias, however, does also work from ts or js files, so that's not a good solution right now.
-      '../../theme.config$': path.join(__dirname, '../src/theme.config'),
+      '../../theme.config$': path.join(__dirname, '/semantic-ui/theme.config'),
+      '../semantic-ui/site': path.join(__dirname, '/semantic-ui/site'),
     },
     plugins: [
       new TsconfigPathsPlugin({
@@ -37,6 +38,13 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'less-loader'],
+        }),
+        test: /\.less$/,
+      },
       {
         test: /\.mjs$/,
         include: /node_modules/,
@@ -56,7 +64,6 @@ module.exports = {
         ],
       },
       {
-        // Fixes for quirky modules
         test: /\.m?js$/,
         use: [
           {
@@ -66,16 +73,16 @@ module.exports = {
               ...babelConfig,
             },
           },
-          {
-            test: /\.(?:le|c)ss$/,
-            use: ['style-loader', 'css-loader', 'less-loader'],
-            loader: require.resolve('less-loader'),
-            options: {
-              importLoaders: 1,
-            },
-          },
         ],
         include: [path.resolve(__dirname, '..', 'node_modules', 'regexpp')],
+      },
+      {
+        test: /\.(sass|less|css)$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
       },
       {
         test: /\.(jpe?g|png|gif|svg|ttf|woff2?|eot)$/,
@@ -104,17 +111,24 @@ module.exports = {
       filename: '[name].[chunkhash].css',
       chunkFilename: '[name].[chunkhash].css',
     }),
+
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: './public/config',
+          from: './config',
           to: pathToBuild + '/config',
         },
       ],
     }),
+    // new Serve({ static: pathToBuild }),
   ],
   devServer: {
-    contentBase: pathToPublic,
-    historyApiFallback: true,
+    path: pathToBuild,
+    compress: true,
+    port: 9000,
+    hot: true,
+    host: 'localhost',
+    https: true,
+    pathToPublic: '/',
   },
 };

@@ -10,18 +10,24 @@ const browserTargets = [
   'not dead', // Exclude browsers with less than 0.5% global usage and without official support or updates for 24 months.
 ];
 
-
-const devPlugins = ['@babel/plugin-syntax-jsx'];
+const devPlugins = [
+  '@babel/plugin-syntax-jsx',
+  ['@babel/plugin-proposal-decorators', { legacy: true }],
+];
 
 // Running in reversed order - last array entry runs first
 const presets = [
   [
     '@babel/preset-env',
-    { useBuiltIns: 'entry', corejs: 3, modules: 'commonjs', targets: browserTargets },
+    {
+      useBuiltIns: 'entry',
+      corejs: 3,
+      modules: 'commonjs',
+      targets: browserTargets,
+    },
   ],
   '@babel/preset-react',
   '@babel/preset-typescript',
-  
 ];
 
 module.exports = {

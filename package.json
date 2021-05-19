@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.14.2",
+    "@babel/preset-typescript": "^7.13.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -11,10 +13,14 @@
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.0",
     "axios": "^0.21.1",
+    "babel-loader": "8.1.0",
     "classnames": "^2.3.1",
-    "copy-webpack-plugin": "^8.1.1",
+    "copy-webpack-plugin": "^6.4.0",
+    "css": "^3.0.0",
     "css-loader": "^5.2.4",
-    "html-webpack-plugin": "^5.3.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.0.0",
     "husky": "^6.0.0",
     "less": "^4.1.1",
     "less-loader": "^9.0.0",
@@ -23,25 +29,30 @@
     "mobx": "4.11.0",
     "mobx-react": "6.1.4",
     "mobx-sync": "3.0.0",
+    "node-sass": "^6.0.0",
+    "pepjs": "^0.5.3",
     "prettier": "^2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^4.0.3",
     "react-vis": "^1.11.7",
+    "reflect-metadata": "^0.1.13",
     "sass": "^1.32.13",
     "sass-loader": "^11.1.1",
     "scss": "^0.2.4",
-    "semantic-ui-css": "^2.4.1",
+    "scss-loader": "^0.0.1",
     "semantic-ui-react": "^2.0.3",
     "style-loader": "^2.0.0",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
-    "typescript": "^4.1.2"
+    "typescript": "^4.1.2",
+    "webpack": "4.44.2",
+    "webpack-dev-server": "3.11.1",
+    "webpack-serve": "^4.0.0"
   },
   "scripts": {
-    "start": "webpack server config/webpack.config.js --mode development start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco  start",
+    "build": "craco build",
+    "test": "craco  test"
   },
   "eslintConfig": {
     "extends": [
@@ -62,16 +73,17 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^6.1.2",
+    "@semantic-ui-react/craco-less": "^1.2.1",
     "@types/enzyme": "^3.10.8",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",
     "react-test-renderer": "^17.0.2",
+    "semantic-ui-less": "^2.4.1",
     "serve": "^11.3.2",
-    "webpack": "^5.37.0",
-    "webpack-cli": "^4.7.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-cli": "^4.7.0"
   },
   "jest": {
     "snapshotSerializers": [
