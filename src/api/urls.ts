@@ -5,3 +5,11 @@ export function getBaseUrl(): string {
 export function getDistrictsURL(): string {
   return `/districts`;
 }
+
+export function getGermanURL(): string {
+  return `/germany`;
+}
+
+export function getGermanHistoryURL(type: string, days?: string): string {
+  return days ? `/germany/history/${type}/${days}` : `/germany/history/${type}`;
+}

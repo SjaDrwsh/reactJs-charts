@@ -8,8 +8,7 @@ type ConfirmedInfectionsProps = {
   ags: string;
 };
 
-const ConfirmedInfections = (props: ConfirmedInfectionsProps) => {
-  console.log(props.ags);
+const District = (props: ConfirmedInfectionsProps) => {
   useEffect(() => {
     if (props.ags.length) {
       districtsApiService.getDistrict.call(props.ags);
@@ -20,6 +19,11 @@ const ConfirmedInfections = (props: ConfirmedInfectionsProps) => {
     return null;
   }
 
+  /**
+   * convert statistics into UI compatible numbers
+   * @param number sent from api
+   * @returns string to show
+   */
   const toDecimal = (number: string): string => {
     const value = Number(parseFloat(number).toFixed(2));
     return Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(
@@ -54,4 +58,4 @@ const ConfirmedInfections = (props: ConfirmedInfectionsProps) => {
   );
 };
 
-export default ConfirmedInfections;
+export default District;

@@ -22,11 +22,8 @@ type ReadApiStateContextProps<
   children: (data: T) => React.ReactNode;
 };
 
-type Props<
-  T,
-  E extends { message: string },
-  P extends any[]
-> = ReadApiStateContextProps<T, E, P>;
+type Props<T, E extends { message: string }, P extends any[]> =
+  ReadApiStateContextProps<T, E, P>;
 
 /**
  * Helper HOC to be used with ApiState

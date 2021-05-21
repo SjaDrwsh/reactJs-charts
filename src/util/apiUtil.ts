@@ -22,7 +22,7 @@ export async function sendRequest<T>(
  */
 function onSuccessInterceptor(value: any): any {
   // for all success cases do nothing, just forward the response
-  return value.data;
+  return value;
 }
 
 function onErrorInterceptor(error: any): any {

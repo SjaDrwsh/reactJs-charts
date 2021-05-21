@@ -1,10 +1,10 @@
 import 'semantic-ui-less/semantic.less';
-import OverviewPage from './pages/overviewPage/overviewPage';
+import MainPage from './pages/mainPage/MainPage';
 
 const App = () => {
   return (
-    <div className="App">
-      <OverviewPage />
+    <div className="app">
+      <MainPage />
     </div>
   );
 };

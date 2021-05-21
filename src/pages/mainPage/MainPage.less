@@ -1,0 +1,29 @@
+@main-page: .getComponentSelector(main-page) [];
+
+@{main-page} {
+  .ui.segment {
+    position: relative;
+    background: transparent;
+    box-shadow: 0px 1px 2px 0 rgb(34 36 38 / 15%);
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+  }
+
+  .ui.secondary.menu {
+    width: 100%;
+    justify-content: center;
+
+    .item {
+      border: solid 1px #f2e6eb;
+      box-shadow: 1px 1px 1px 1px grey;
+      background: #fff;
+    }
+
+    .active.item {
+      background: lightgrey;
+      border: solid 1px #f5eff2;
+    }
+  }
+}

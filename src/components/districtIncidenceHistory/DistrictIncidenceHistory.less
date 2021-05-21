@@ -1,0 +1,29 @@
+@incident-history-accordion: .getComponentSelector(incident-history-accordion)
+  [];
+
+@{incident-history-accordion} {
+  display: inline-flex;
+  width: 100%;
+
+  .accordion.ui.styled {
+    padding: 1.5rem;
+    display: grid;
+    position: relative;
+    margin: 1rem;
+  }
+
+  .accordion.ui.styled::after {
+    content: ' ';
+    background-image: url('../../assets/bacteria_virus_coronavirus_covid_corona_icon_142077.png');
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    filter: grayscale(50%);
+    zoom: 50%;
+    background-repeat: no-repeat;
+    background-position-x: right;
+  }
+}

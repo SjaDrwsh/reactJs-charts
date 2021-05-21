@@ -32,10 +32,18 @@ const DistrictDropdown = (props: DistrictDropdownProps) => {
               options={districtOptions}
               search
               selection
-              onChange={(_e, data) => {
-                props.onChange(data.value as string);
+              onChange={(
+                event: React.SyntheticEvent<HTMLElement, Event>,
+                data
+              ) => {
+                // only call on select option and not going up and down with keyboard arrow
+                if (event.type === 'click') {
+                  props.onChange(data.value as string);
+                }
               }}
             />
+            <br />
+            <small>you can also search for a certain district</small>
           </>
         );
       }}

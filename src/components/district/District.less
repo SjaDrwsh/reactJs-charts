@@ -1,0 +1,42 @@
+@district-accordion: .getComponentSelector(district-accordion) [];
+
+@{district-accordion} {
+  display: inline-flex;
+
+  .accordion {
+    padding: 1.5rem;
+    display: grid;
+    width: 15rem;
+    position: relative;
+    height: 15rem;
+    margin: 1rem;
+
+    p {
+      line-height: 1.4rem;
+    }
+
+    .title {
+      margin: 0em;
+      padding: 0 0em;
+      color: rgba(0, 0, 0, 0.4);
+      font-weight: bold;
+      border-top: 0;
+    }
+  }
+
+  .accordion::after {
+    content: ' ';
+    background-image: url('../../assets/bacteria_virus_coronavirus_covid_corona_icon_142077.png');
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    filter: grayscale(50%);
+    background-position-y: center;
+    zoom: 30%;
+    background-repeat: no-repeat;
+    background-position-x: right;
+  }
+}
