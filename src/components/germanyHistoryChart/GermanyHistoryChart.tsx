@@ -71,6 +71,10 @@ const GermanyHistoryChart = (props: GermanyHistoryChartProps) => {
     setDeaths(deathsHistory);
   }, [props.days]);
 
+  if (!props.days) {
+    return null;
+  }
+
   return (
     <>
       <div className="incident-history-accordion">

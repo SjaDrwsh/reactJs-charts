@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Accordion, Button } from 'semantic-ui-react';
+import { Accordion, Button, Icon } from 'semantic-ui-react';
 import { germanyApiService } from 'src/api/germanyApi/GermanyApiService';
 import { IGermanyResponse } from 'src/api/interfaces';
 import GermanyHistoryChart from 'src/components/germanyHistoryChart/GermanyHistoryChart';
@@ -7,16 +7,15 @@ import InfoCard from 'src/components/infoCard/InfoCard';
 import { ReadApiStateContext } from 'src/state/StateContext';
 
 const CountryOverview = () => {
-  const [days, setDays] = useState('7');
+  const [days, setDays] = useState('');
+
+  const onDaysPicked = (numberOfDays: string): void => {
+    setDays(numberOfDays);
+  };
 
   useEffect(() => {
     germanyApiService.getGermanyHistory.call();
-    onDaysPicked('');
-  });
-
-  const onDaysPicked = (days: string): void => {
-    setDays(days);
-  };
+  }, [days]);
 
   return (
     <div className="country-overview">
@@ -38,11 +37,15 @@ const CountryOverview = () => {
           }}
         </ReadApiStateContext>
         <GermanyHistoryChart days={days} />
+        <h4>
+          <Icon name="info circle" color="blue" /> Please pick duration to see
+          overview
+        </h4>
         <div className="filter-by">
           <Button content="Last 7 days" onClick={() => onDaysPicked('7')} />
           <Button content="Last Month" onClick={() => onDaysPicked('30')} />
           <Button content="Last 3 Months" onClick={() => onDaysPicked('91')} />
-          <Button content="All" onClick={() => onDaysPicked('')} />
+          <Button content="All" onClick={() => onDaysPicked('900')} />
         </div>
       </Accordion>
     </div>

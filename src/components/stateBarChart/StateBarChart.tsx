@@ -36,18 +36,19 @@ const StateBarChart = (props: GermanyHistoryChartProps) => {
       <div className="incident-history-accordion">
         <Accordion styled>
           <h5>States Vaccination Overview</h5>
-          <XYPlot xType="ordinal" width={700} height={300}>
+          <XYPlot xType="ordinal" width={800} height={300}>
             <VerticalGridLines />
             <HorizontalGridLines />
-            <XAxis tickLabelAngle={-30} />
+            <XAxis tickLabelAngle={-30} title="state" />
             <YAxis
+              title="Vaccinated"
               tickLabelAngle={30}
               tickFormat={(d) => {
                 return d / 1000000 + 'Mill';
               }}
             />
             <VerticalBarSeriesCanvas
-              barWidth={10}
+              barWidth={20}
               className="vertical-bar-series-example"
               data={barChartData(props.data)}
             />
