@@ -1,5 +1,3 @@
-import 'jest-enzyme';
-import 'raf/polyfill';
 import 'jsdom-global/register';
 import App from './App';
 import { mount } from 'enzyme';

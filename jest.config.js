@@ -24,6 +24,7 @@ module.exports = {
     'src/reducers/**/*.js?(x)',
   ],
   coverageDirectory: './coverage',
+  cacheDirectory: './tmp/',
   coverageReporters: ['json', 'lcov', 'text'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/'],
 };
