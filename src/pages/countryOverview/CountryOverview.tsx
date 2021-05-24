@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Accordion, Button, Icon } from 'semantic-ui-react';
-import { germanyApiService } from 'src/api/germanyApi/GermanyApiService';
-import { IGermanyResponse } from 'src/api/interfaces';
-import GermanyHistoryChart from 'src/components/germanyHistoryChart/GermanyHistoryChart';
-import InfoCard from 'src/components/infoCard/InfoCard';
-import { ReadApiStateContext } from 'src/state/StateContext';
+import { germanyApiService } from '../../api/germanyApi/GermanyApiService';
+import { IGermanyResponse } from '../../api/interfaces';
+import GermanyHistoryChart from '../../components/germanyHistoryChart/GermanyHistoryChart';
+import InfoCard from '../../components/infoCard/InfoCard';
+import { ReadApiStateContext } from '../../state/StateContext';
 
 const CountryOverview = () => {
   const [days, setDays] = useState('');

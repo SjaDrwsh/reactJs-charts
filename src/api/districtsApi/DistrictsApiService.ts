@@ -1,11 +1,9 @@
 import { ReadApiState } from '../../state/ReadApiState';
 import request, { sendRequest } from '../../util/apiUtil';
 import {
-  IDistrictsApiResponse,
   IncidenceHistoryResponse,
   IDistrictsNameResponse,
   IDistrictsResponse,
-  IncidenceHistoryApiResponse,
   IApiDistrictResponse,
 } from '../interfaces';
 import { getDistrictsURL } from '../urls';

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Accordion } from 'semantic-ui-react';
-import { germanyApiService } from 'src/api/germanyApi/GermanyApiService';
+import { germanyApiService } from '../../api/germanyApi/GermanyApiService';
 import {
   IDeathHistoryResponse,
   IGermanyCasesHistoryResponse,
   IncidenceHistoryResponse,
   IRecoveredHistoryResponse,
-} from 'src/api/interfaces';
+} from '../../api/interfaces';
 import LineSeriesChart from '../lineSeriesChart/LineSeriesChart';
 
 type GermanyHistoryChartProps = {

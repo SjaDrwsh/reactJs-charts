@@ -7,8 +7,8 @@ import {
   XYPlot,
   YAxis,
 } from 'react-vis';
-import { Accordion, Icon } from 'semantic-ui-react';
-import { IVaccinationStateResponse } from 'src/api/interfaces';
+import { Accordion } from 'semantic-ui-react';
+import { IVaccinationStateResponse } from '../../api/interfaces';
 
 type GermanyHistoryChartProps = {
   data?: IVaccinationStateResponse;

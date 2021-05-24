@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { Accordion } from 'semantic-ui-react';
-import { IVaccinationResponse } from 'src/api/interfaces';
-import { vaccinationsApiService } from 'src/api/vaccinationsApi/VaccinationsApiService';
-import InfoCard from 'src/components/infoCard/InfoCard';
-import StateBarChart from 'src/components/stateBarChart/StateBarChart';
-import { ReadApiStateContext } from 'src/state/StateContext';
+import { IVaccinationResponse } from '../../api/interfaces';
+import { vaccinationsApiService } from '../../api/vaccinationsApi/VaccinationsApiService';
+import InfoCard from '../../components/infoCard/InfoCard';
+import StateBarChart from '../../components/stateBarChart/StateBarChart';
+import { ReadApiStateContext } from '../../state/StateContext';
 
 const VaccinationsOverview = () => {
   useEffect(() => {

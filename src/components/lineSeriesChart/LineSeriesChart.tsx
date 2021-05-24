@@ -13,7 +13,7 @@ import {
   IGermanyCasesHistoryResponse,
   IncidenceHistoryResponse,
   IRecoveredHistoryResponse,
-} from 'src/api/interfaces';
+} from '../../api/interfaces';
 
 type LineSeriesChartProps = {
   cases: IGermanyCasesHistoryResponse[];

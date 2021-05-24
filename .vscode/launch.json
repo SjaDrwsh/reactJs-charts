@@ -35,31 +35,9 @@
         "${fileBasename}",
         "--runInBand",
         "--coverage=false",
+        "--detectOpenHandles",
         "--verbose",
         "--config=${workspaceRoot}/jest.config.js"
-      ],
-      "cwd": "${workspaceRoot}",
-      "preLaunchTask": null,
-      "runtimeExecutable": null,
-      "runtimeArgs": ["--nolazy"],
-      "env": {
-        "NODE_ENV": "test"
-      },
-      "console": "integratedTerminal",
-      "sourceMaps": true
-    },
-    {
-      "name": "Unit-Tests Related to Current File",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
-      "stopOnEntry": false,
-      "args": [
-        "--runInBand",
-        "--coverage=false",
-        "--config=${workspaceRoot}/jest.config.js",
-        "--findRelatedTests",
-        "${relativeFile}"
       ],
       "cwd": "${workspaceRoot}",
       "preLaunchTask": null,
