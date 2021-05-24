@@ -10,6 +10,10 @@ export function getGermanURL(): string {
   return `/germany`;
 }
 
+export function getVaccinationURL(): string {
+  return `/vaccinations`;
+}
+
 export function getGermanHistoryURL(type: string, days?: string): string {
   return days ? `/germany/history/${type}/${days}` : `/germany/history/${type}`;
 }

@@ -51,7 +51,7 @@ export class ReadApiStateContext<
           let { error, isLoading } = props.state;
 
           if (error) {
-            return <p>{error.message}</p>;
+            return <p className="error-wrapper">{error.message}</p>;
           }
 
           if (isLoading || data === undefined) {

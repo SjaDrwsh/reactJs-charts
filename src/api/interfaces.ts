@@ -67,6 +67,27 @@ interface IGermanyMetaData {
   contact: string;
 }
 
+export interface IVaccinationStateResponse {
+  [key: string]: IVaccinationResponse;
+}
+export interface IVaccinationResponse {
+  vaccination: vaccinationType;
+  vaccinated: number;
+  administeredVaccinations: number;
+  states: IVaccinationStateResponse;
+}
+
+interface vaccinationType {
+  biontech: number;
+  moderna: number;
+  astraZeneca: number;
+}
+
+export interface IApiVaccinationResponse {
+  data: IVaccinationResponse;
+  meta: IGermanyMetaData;
+}
+
 export interface IGermanyCasesHistoryResponse {
   cases: number;
   date: string;

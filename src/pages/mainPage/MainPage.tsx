@@ -1,6 +1,7 @@
 import { Tab } from 'semantic-ui-react';
 import CountryOverview from '../countryOverview/CountryOverview';
 import DistrictOverview from '../districtOverview/DistrictOverview';
+import VaccinationsOverview from '../vaccinationsOverview/VaccinationsOverview';
 
 const MainPage = () => {
   const panes = [
@@ -24,7 +25,7 @@ const MainPage = () => {
       menuItem: 'Vaccination',
       render: () => (
         <Tab.Pane attached={false}>
-          <p>vaccination</p>
+          <VaccinationsOverview />
         </Tab.Pane>
       ),
     },

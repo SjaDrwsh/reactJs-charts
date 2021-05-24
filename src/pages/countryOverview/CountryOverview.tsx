@@ -7,10 +7,11 @@ import InfoCard from 'src/components/infoCard/InfoCard';
 import { ReadApiStateContext } from 'src/state/StateContext';
 
 const CountryOverview = () => {
-  const [days, setDays] = useState('');
+  const [days, setDays] = useState('7');
 
   useEffect(() => {
     germanyApiService.getGermanyHistory.call();
+    onDaysPicked('');
   });
 
   const onDaysPicked = (days: string): void => {
