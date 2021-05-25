@@ -23,6 +23,7 @@ Where do you see issues in your code that might cause issues in the future? How 
 - change the way interfaces are defined as they are a bit complicated due to the returned APIs callback data
 - We might wanna think of using for example webpack 5 due to the new feature added in that version
 - create more dynamic components to be reused
+- I would have added route module to switch between tabs using routes to be able to save state for data, search and other.
 
 How would you improve the API that you just used or its documentation?
 
