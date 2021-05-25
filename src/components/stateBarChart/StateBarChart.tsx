@@ -10,7 +10,7 @@ import {
 import { Accordion } from 'semantic-ui-react';
 import { IVaccinationStateResponse } from '../../api/interfaces';
 
-type GermanyHistoryChartProps = {
+export type GermanyHistoryChartProps = {
   data?: IVaccinationStateResponse;
 };
 
@@ -31,6 +31,7 @@ const StateBarChart = (props: GermanyHistoryChartProps) => {
     return null;
   }
 
+  console.log(props.data);
   return (
     <>
       <div className="incident-history-accordion">

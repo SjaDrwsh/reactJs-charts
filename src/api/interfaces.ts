@@ -74,7 +74,7 @@ export interface IVaccinationResponse {
   vaccination: vaccinationType;
   vaccinated: number;
   administeredVaccinations: number;
-  states: IVaccinationStateResponse;
+  states?: IVaccinationStateResponse;
 }
 
 interface vaccinationType {

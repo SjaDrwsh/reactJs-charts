@@ -15,7 +15,7 @@ import {
   IRecoveredHistoryResponse,
 } from '../../api/interfaces';
 
-type LineSeriesChartProps = {
+export type LineSeriesChartProps = {
   cases: IGermanyCasesHistoryResponse[];
   incidences: IncidenceHistoryResponse[];
   deaths: IDeathHistoryResponse[];

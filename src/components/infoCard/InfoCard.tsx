@@ -1,6 +1,6 @@
 import { Accordion } from 'semantic-ui-react';
 
-type InfoCardProps = {
+export type InfoCardProps = {
   title: string;
   value: number;
 };
