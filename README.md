@@ -2,6 +2,9 @@
 
 A collection of react components to render common data visualization charts, such as line/area/bar charts
 
+![overview](https://user-images.githubusercontent.com/10211191/119553741-3532c680-bd9c-11eb-9a67-7984e67b2a27.gif)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
