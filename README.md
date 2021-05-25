@@ -4,6 +4,11 @@ A collection of react components to render common data visualization charts, suc
 
 ![overview](https://user-images.githubusercontent.com/10211191/119553741-3532c680-bd9c-11eb-9a67-7984e67b2a27.gif)
 
+![districts ](https://user-images.githubusercontent.com/10211191/119554083-8fcc2280-bd9c-11eb-8175-bf1057b1157e.gif)
+
+![vaccination](https://user-images.githubusercontent.com/10211191/119554213-b722ef80-bd9c-11eb-94b0-fed0b99460d1.gif)
+
+
 
 ## Available Scripts
 
