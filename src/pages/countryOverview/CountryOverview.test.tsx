@@ -1,20 +1,16 @@
 import 'jsdom-global/register';
 import { mount } from 'enzyme';
 import CountryOverview from './CountryOverview';
-import { mockReadApiState, skipTick } from '../../util/testUtil';
+import { skipTick } from '../../util/testUtil';
 import { germanyApiService } from '../../api/germanyApi/GermanyApiService';
 import { IGermanyResponse } from '../../api/interfaces';
 import InfoCard from '../../components/infoCard/InfoCard';
 import GermanyHistoryChart from '../../components/germanyHistoryChart/GermanyHistoryChart';
+import { ReadApiState } from '../../state/ReadApiState';
+import { Button } from 'semantic-ui-react';
 
 describe('Tests for CountryOverview', () => {
   const countryOverview = mount(<CountryOverview />);
-
-  it('on mount CountryOverview service should be called', async () => {
-    await skipTick();
-    countryOverview.update();
-    expect(germanyApiService.getGermanyHistory.call).toHaveBeenCalled();
-  });
 
   it('renders title correctly', () => {
     expect(countryOverview.find('h2').text()).toEqual('Germany`s Overview');
@@ -24,11 +20,11 @@ describe('Tests for CountryOverview', () => {
     expect(countryOverview.find(GermanyHistoryChart).length).toEqual(1);
   });
 
-  it('renders InfoCard', async () => {
-    mockReadApiState(germanyApiService.getGermanyHistory, async () =>
-      Promise.resolve(testData)
-    );
+  it('renders filter 4 buttons', () => {
+    expect(countryOverview.find(Button).length).toEqual(4);
+  });
 
+  it('renders InfoCard', async () => {
     const testData: IGermanyResponse = {
       cases: 3651640,
       casesPer100k: 4390.747158439391,
@@ -51,11 +47,12 @@ describe('Tests for CountryOverview', () => {
       },
     };
 
-    const countryOverview = mount(<CountryOverview />);
+    // mock api call
+    germanyApiService.getGermanyHistory = new ReadApiState(
+      jest.fn().mockImplementation(async () => Promise.resolve(testData))
+    );
 
-    // jest
-    //   .spyOn(germanyApiService.getGermanyHistory, 'data', 'get')
-    //   .mockImplementation(() => testData);
+    const countryOverview = mount(<CountryOverview />);
 
     await skipTick();
     countryOverview.update();
