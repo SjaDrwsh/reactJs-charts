@@ -32,9 +32,9 @@ export interface IncidenceHistoryApi {
 }
 
 interface Delta {
-  cases: string;
-  deaths: string;
-  recovered: string;
+  cases: number;
+  deaths: number;
+  recovered: number;
 }
 
 export interface IDistrictsNameResponse {

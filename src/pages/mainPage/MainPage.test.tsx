@@ -4,13 +4,13 @@ import MainPage from './MainPage';
 import { MenuItem, Tab } from 'semantic-ui-react';
 
 describe('Tests for MainPage', () => {
+  const mainPage = mount(<MainPage />);
+
   it('renders MainPage', () => {
-    const mainPage = mount(<MainPage />);
     expect(mainPage).toBeDefined();
   });
 
   it('renders Tab with three Menu items', () => {
-    const mainPage = mount(<MainPage />);
     expect(mainPage.find(Tab).length).toEqual(1);
     expect(mainPage.find(MenuItem).length).toEqual(3);
 
@@ -31,5 +31,13 @@ describe('Tests for MainPage', () => {
       .find(MenuItem)
       .filterWhere((x) => x.props().content === 'Vaccination');
     expect(vaccinationOverviewMenu.length).toEqual(1);
+  });
+
+  it('render first tab as default overview as active', () => {
+    // Germany`s overview
+    const germanyOverviewMenu = mainPage
+      .find(MenuItem)
+      .filterWhere((x) => x.props().content === 'Germany Overview');
+    expect(germanyOverviewMenu.find('a').hasClass('active')).toEqual(true);
   });
 });
