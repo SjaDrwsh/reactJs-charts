@@ -25,8 +25,6 @@ const VaccinationsOverview = () => {
                 />
                 <InfoCard title="Vaccinated" value={data.vaccinated} />
                 <StateBarChart data={data.states} />
-                {/* state vaccinated people bar chart also on click vaccination type by state */}
-                {/* vaccination type pie chart */}
               </>
             );
           }}
