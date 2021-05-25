@@ -16,7 +16,7 @@ What alternative approaches/solutions to the user story did you consider when en
 
 What additional features/improvements do you think could help the customer gain more value from your application?
 
-- we can still add a lot of information regarding germany overview, tests and vaccination per state, vaccination types ..
+- we can still add a lot of information regarding germany`s overview, tests and vaccination per state, vaccination types ..
 
 Where do you see issues in your code that might cause issues in the future? How would you monitor the performance of your app?
 
@@ -27,9 +27,9 @@ Where do you see issues in your code that might cause issues in the future? How 
 
 How would you improve the API that you just used or its documentation?
 
-- the apis were also a bit messy and had to map data in services before sending them to component, if I created backend APIs would have returned more clear interfaces.
+- the apis were also a bit messy and had to map data in services before sending them to components, if I created backend APIs would have returned more clear interfaces.
 - also the documentation was not clear regarding what each attribute presents for example
 
 What did you think about this test? How interesting was it for you? How would you recommend us to improve the test?
 
-- the idea was very relatable and as a user It was relatable to our daily life at the moment. Nothing really to improve
+- the idea was very relatable to our daily life at the moment. Nothing really to improve
