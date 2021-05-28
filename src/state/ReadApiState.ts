@@ -29,7 +29,6 @@ export class ReadApiState<T, E, P extends any[]> {
   }
 
   public constructor(private promiseFn: PromiseFn<T, E, P>) {
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const thisContext = this;
     onBecomeUnobserved(this, '_data', () => {
       // When there is no more observer on the _data observable value, reset the current ReadApiState
